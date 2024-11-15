@@ -7,6 +7,11 @@ import ProductInfo from './pages/productInfo/ProductInfo';
 import ScrollTop from "./components/scrollTop/ScrollTop";
 import CartPage from "./pages/cart/CartPage";
 import AllProduct from "./pages/allproduct/AllProduct";
+import Login from "./pages/registration/Login";
+import Signup from "./pages/registration/Signup";
+import UserDashboard from "./pages/user/UserDashboard";
+
+
 
 function App() {
   return (
@@ -19,6 +24,12 @@ function App() {
           <Route path="/productinfo" element={ <ProductInfo/>} />
           <Route path="/cart" element={<CartPage/>} />
           <Route path="/allproduct" element={<AllProduct />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/user-dashboard" element={<UserDashboard />} />
+       
+     
+          
         </Routes>
       </Router>
     </div>
