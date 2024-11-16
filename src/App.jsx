@@ -10,6 +10,7 @@ import AllProduct from "./pages/allproduct/AllProduct";
 import Login from "./pages/registration/Login";
 import Signup from "./pages/registration/Signup";
 import UserDashboard from "./pages/user/UserDashboard";
+import AdminDashboard from "./pages/admin/AdminDashboard";
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/user-dashboard" element={<UserDashboard />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
        
      
           
