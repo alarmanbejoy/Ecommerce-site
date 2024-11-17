@@ -1,15 +1,10 @@
-import { Link } from "react-router-dom";
-
-const ProductDetail = () => {
+const OrderDetail = () => {
     return (
         <div>
-            <div className="py-5 flex justify-between items-center">
+               <div>
+            <div className="py-5">
                 {/* text  */}
-                <h1 className=" text-xl text-pink-300 font-bold">All Product</h1>
-                {/* Add Product Button  */}
-              <Link to={'/addproduct'}>
-              <button className="px-5 py-2 bg-pink-50 border border-pink-100 rounded-lg">Add Product</button>
-              </Link>
+                <h1 className=" text-xl text-pink-300 font-bold">All Order</h1>
             </div>
 
             {/* table  */}
@@ -40,7 +35,8 @@ const ProductDetail = () => {
                 </table>
             </div>
         </div>
+        </div>
     );
 }
 
-export default ProductDetail;
+export default OrderDetail;
