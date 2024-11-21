@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../searchBar/SearchBar";
+import { useSelector } from "react-redux";
 
 
 const Navbar = () => {
     // get user from localStorage 
     const user = JSON.parse(localStorage.getItem('users'));
-
 
     // navigate 
     const navigate = useNavigate();
@@ -15,6 +15,9 @@ const Navbar = () => {
         localStorage.clear('users');
         navigate("/login")
     }
+
+    // CartItems
+    const cartItems = useSelector((state) => state.cart);
 
     // navList Data
     const navList = (
@@ -41,12 +44,12 @@ const Navbar = () => {
 
             {/* User */}
             {user?.role === "user" && <li>
-                <Link to={'/user-dashboard'}>{user?.name}</Link>
+                <Link to={'/user-dashboard'}>User</Link>
             </li>}
 
             {/* Admin */}
             {user?.role === "admin" && <li>
-                <Link to={'/admin-dashboard'}>{user.name}</Link>
+                <Link to={'/admin-dashboard'}>Admin</Link>
             </li>}
 
             {/* logout */}
@@ -57,7 +60,7 @@ const Navbar = () => {
             {/* Cart */}
             <li>
                 <Link to={'/cart'}>
-                    Cart(0)
+                    Cart({cartItems.length})
                 </Link>
             </li>
         </ul>
@@ -82,7 +85,7 @@ const Navbar = () => {
                 <SearchBar />
             </div>
         </nav>
-    ); 
+    );
 }
 
 export default Navbar;
